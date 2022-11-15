@@ -25,11 +25,18 @@ We sought to find and display a correlation between a countries’ Gross Domesti
 ```{r, echo = FALSE}
 # Aggregate Table
 
-#source("../source/AggregateTable.R")
-#kable(average_gold)
+source("../source/AggregateTable.R")
 ```
 
+| Measurement | Value |
+| ----------- | ----- |
+| Average Medal Count | `r average_medals` |
+| Average 2020 GDP | `r round(median_2020_GDP)` |
+| Gold Percent Won By US | `r (round(usa_gold_percentage, digits = 4)) * 100` |
 
+*Observations:*
+
+From this table we learn that the average medal count across all countries is `r average_medals` and that the average national gross domestic product (GDP) is approximately `r round(median_2020_GDP)`. These values are crucial to our analysis because we previously calculated how many countries are above these averages, so including these values provides the threshold in which we are considering. It also provides context to our data visualizations because it can be easily observed whether a certain country in our visualizations is above or below this threshold. Throughout our analysis we discovered the United States to be well above average in both of these areas so we have also included that `r (round(usa_gold_percentage, digits = 4)) * 100` percent of total gold medals that have been won by the United States.
 
 ```{r, echo = FALSE}
 # GDP Map
