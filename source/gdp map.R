@@ -41,3 +41,4 @@ gdp_map <- ggplot(joined_df, aes( x = long, y = lat, group = group )) +
        , subtitle = 'GDP per capita (current international $)')
 
 ggplotly(gdp_map)
+
