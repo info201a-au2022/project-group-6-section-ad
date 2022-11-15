@@ -51,14 +51,14 @@ summary_info$summary_avg_medal_count <- joined_medals_df %>%
 
 #number of countries above average GDP
 summary_info$summary_above_avg_gdp <- country_gdp %>% 
-  mutate(above_avg = X2021 > summary_avg_gdp) %>% 
+  mutate(above_avg = X2021 > summary_info$summary_avg_gdp) %>% 
   select(above_avg) %>% 
   summarize(total = sum(above_avg == TRUE, na.rm = T)) %>% 
   pull()
 
 #number of countries above average medal count
 summary_info$summary_above_avg_medals <- joined_medals_df %>% 
-  mutate(above_avg = Total_Medals, na.rm = T) %>% 
+  mutate(above_avg = Total_Medals > summary_info$summary_avg_medal_count, na.rm = T) %>% 
   select(above_avg) %>% 
   summarize(total = sum(above_avg == TRUE, na.rm = T)) %>% 
   pull()
