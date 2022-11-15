@@ -29,9 +29,7 @@ We sought to find and display a correlation between a countries’ Gross Domesti
 #kable(average_gold)
 ```
 
-*Observations:*
 
-*Three Charts:*
 
 ```{r, echo = FALSE}
 # GDP Map
@@ -64,5 +62,5 @@ ggplotly(medals_US)
 
 *Observations:*
 
-As seen from the previous two data visualizations, the United States is among the top in both GDP production and Olympic success, this time graph goes further in depth tracking the United States' Olympic success over time. This reveals that the United States has had relatively stable success in the Olympics until 1980. After 1980, the United States has had varied success, some years total medal count is nearly 750, where as others it is closer to 250. This difference may be due to the Olympics being held every 2 years and staggering Winter and Summer Olympics after 1986.
+As seen from the previous two data visualizations, the United States is among the top in both GDP production and Olympic success, this time graph goes further in depth tracking the United States' Olympic success over time. This reveals that the United States has had relatively stable success in the Olympics until 1980. After 1980, the United States has had varied success, some years total medal count is nearly 750, where as others it is closer to 250. This difference may be due to the Olympics being held every 2 years and staggering Winter and Summer Olympics after 1986. We can see that in the year 1992, the United States won the most medals and after that, the graph fluctuates over the years until 2016.
 

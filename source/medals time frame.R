@@ -1,6 +1,7 @@
 # Medals won by the United States over the years.
 
 #install.packages("hrbrthemes")
+
 #libraries
 library(ggplot2)
 library(tidyverse)
@@ -25,7 +26,7 @@ medals_US <- data %>%
   geom_area(fill="azure3", alpha = 0.5) +
   geom_line(color="azure4") +
   ylab("Total Medals") +
-  labs( title = "Medals Won By the U.S. in the Olympics (1896-2016")
+  labs( title = "Medals Won By the U.S. in the Olympics (1896-2016)")
   theme_ipsum()
 
 # Turn it interactive with ggploty
