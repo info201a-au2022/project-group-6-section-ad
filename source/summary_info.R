@@ -1,5 +1,4 @@
 # summary_info.r
-# setwd("~/Documents/info201/assignments/project-group-6-section-ad")
 
 library(tidyverse)
 
