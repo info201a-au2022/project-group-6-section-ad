@@ -11,7 +11,15 @@ knitr::opts_chunk$set(echo = FALSE, warning = FALSE, message = FALSE)
 
 **P02: Exploratory Data Analysis**
 
+```{r, echo = FALSE}
+# Summary Info Calculations
+source("../source/summary_info.R")
+options(scipen = 999)
+```
+
 *Dynamic paragraph:*
+
+We sought to find and display a correlation between a countries’ Gross Domestic Product (GDP) and their Olympic success which we measured through total medal count. We have observed `r summary_info$summary_num_countries` different countries throughout this process. We have found that the average GDP from 2021 across all countries is approximately `r round(summary_info$summary_avg_gdp)` and the average medal count for each country as of 2021 is approximately `r round(summary_info$summary_avg_medal_count)` . We have further observed that approximately `r summary_info$summary_above_avg_gdp` countries have a GDP higher than the world average and that approximately `r summary_info$summary_above_avg_medals` countries have an above average number of total medals won at the Olympics.
 
 *Table:*
 ```{r, echo = FALSE}
