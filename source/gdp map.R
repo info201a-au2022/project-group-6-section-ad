@@ -1,5 +1,6 @@
 library(tidyverse)
 library(plotly)
+library(maps)
 
 # remove scientific notation from the map
 options(scipen = 999)
