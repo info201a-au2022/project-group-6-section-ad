@@ -17,7 +17,7 @@ source("../source/summary_info.R")
 options(scipen = 999)
 ```
 
-### Dynamic paragraph:
+#### Dynamic Paragraph:
 
 We sought to find and display a correlation between a countries’ Gross Domestic Product (GDP) and their Olympic success which we measured through total medal count. We have observed `r summary_info$summary_num_countries` different countries throughout this process. We have found that the average GDP from 2021 across all countries is approximately `r round(summary_info$summary_avg_gdp)` and the average medal count for each country as of 2021 is approximately `r round(summary_info$summary_avg_medal_count)` . We have further observed that approximately `r summary_info$summary_above_avg_gdp` countries have a GDP higher than the world average and that approximately `r summary_info$summary_above_avg_medals` countries have an above average number of total medals won at the Olympics.
 
@@ -30,13 +30,13 @@ source("../source/AggregateTable.R")
 
 | Measurement | Value |
 | ----------- | ----- |
-| Average Medal Count | `r average_medals` |
-| Average 2020 GDP | `r round(median_2020_GDP)` |
+| Median Medal Count | `r average_medals` |
+| Median 2020 GDP | `r round(median_2020_GDP)` |
 | Gold Percent Won By US | `r (round(usa_gold_percentage, digits = 4)) * 100` |
 
-*Observations:*
+#### Observations:
 
-From this table we learn that the average medal count across all countries is `r average_medals` and that the average national gross domestic product (GDP) is approximately `r round(median_2020_GDP)`. These values are crucial to our analysis because we previously calculated how many countries are above these averages, so including these values provides the threshold in which we are considering. It also provides context to our data visualizations because it can be easily observed whether a certain country in our visualizations is above or below this threshold. Throughout our analysis we discovered the United States to be well above average in both of these areas so we have also included that `r (round(usa_gold_percentage, digits = 4)) * 100` percent of total gold medals that have been won by the United States.
+The data points included in the table include the worldwide median GDP in the year 2020,  the median number of medals won by Olympic teams, and the percentage of gold medals won by the United States all time. We included this information because it gives the user an idea of how the median Olympic team lines up in comparison to the rest of the world. We also included the USA gold percentage to give an idea of how well the leader in GDP per capita does at the Olympics. Overall, this information reveals how poorly the median country performs at the Olympics in terms of medals. It also displays how higher GDP countries such as the US are dominant at the Olympics.
 
 ```{r, echo = FALSE}
 # GDP Map
