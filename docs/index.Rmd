@@ -17,9 +17,11 @@ knitr::opts_chunk$set(echo = FALSE, warning = FALSE, message = FALSE)
 ```{r, echo = FALSE}
 # Aggregate Table
 
-#source("../data/AggregateTable.R")
-#average_gold
+#source("../source/AggregateTable.R")
+#kable(average_gold)
 ```
+
+*Observations:*
 
 *Three Charts:*
 
@@ -30,6 +32,8 @@ source("../source/gdp map.R")
 ggplotly(gdp_map)
 ```
 
+*Observations:*
+
 This map is included to visualize the Gross Domestic Product (GDP) per capita by each country from data collected at the end of 2021. This can be used to achieve a broad overview of the economy in every country across the world. The countries with the darkest green color have the highest GDP such as the United States, Australia, and a few countries in Europe. Those with a lighter green color have a lower GDP production such as many of the countries in both Africa and South America. The countries with high GDP (darker color) can also further be compared to the bar chart below to help determine if a correlation between high GDP and Olympic success exists.  
 
 ```{r, echo = FALSE}
@@ -38,6 +42,8 @@ This map is included to visualize the Gross Domestic Product (GDP) per capita by
 source("../source/Bar_Chart.R")
 ggplotly(top_performers)
 ```
+
+*Observations:*
 
 This chart is to visualize the top 10 performing countries (in medal count) over the course of Olympic history. This chart can be used to quickly analyze locations around the world that perform best at the Olympics. The graphic reveals that the United States has the most medals of any country at 5219. We can also see that they have about 2 times as many medals as the next best Olympic team. Another observation we can make from the plot is that Europe seems to be the highest performing continent in Olympic history. South America, Africa, and Asia are left out of the graphic entirely, signaling to us that these continents have no Olympic powerhouses. 
 
@@ -48,4 +54,7 @@ source("../source/medals time frame.R")
 ggplotly(medals_US)
 ```
 
+*Observations:*
+
+As seen from the previous two data visualizations, the United States is among the top in both GDP production and Olympic success, this time graph goes further in depth tracking the United States' Olympic success over time. This reveals that the United States has had relatively stable success in the Olympics until 1980. After 1980, the United States has had varied success, some years total medal count is nearly 750, where as others it is closer to 250. This difference may be due to the Olympics being held every 2 years and staggering Winter and Summer Olympics after 1986.
 
