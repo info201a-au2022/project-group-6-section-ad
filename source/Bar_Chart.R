@@ -25,7 +25,8 @@ top_performers <-ggplot(data = olympic) +
 top_performers <- ggplotly(top_performers)
 
 # I included this chart to visualize the top 10 performing countries (in medal count) over the course of Olympic history. 
-# This chart reveals that the United States has the most medals of any country at 5219. 
+# This chart can be used to quickly analyze locations around the world that perform best at the Olympics.
+# The graphic reveals that the United States has the most medals of any country at 5219. 
 # We can also see that they have about 2 times as many medals as the next best Olympic team. 
 # Another observation we can make from the plot is that Europe seems to be the highest performing 
 # continent in Olympic history. South America, Africa, and Asia are left out of the graphic entirely, 
