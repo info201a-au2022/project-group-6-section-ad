@@ -3,11 +3,11 @@
 
 library(tidyverse)
 
-medals_by_country_df <- read.csv(file = 'data/athlete_events.csv')
+medals_by_country_df <- read.csv("https://raw.githubusercontent.com/info201a-au2022/project-group-6-section-ad/main/data/athlete_events.csv")
 
-medals_count_tokyo <- read.csv(file = 'data/Medals count tokyo.csv')
+medals_count_tokyo <- read.csv("https://raw.githubusercontent.com/info201a-au2022/project-group-6-section-ad/main/data/Medals_count_tokyo.csv")
 
-country_gdp <- read.csv(file = 'data/GDP_by_country.csv')
+country_gdp <- read.csv("https://raw.githubusercontent.com/info201a-au2022/project-group-6-section-ad/main/data/GDP_by_country.csv")
 
 
 # find total medal count for each country

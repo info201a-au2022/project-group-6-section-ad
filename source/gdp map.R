@@ -6,7 +6,7 @@ library(maps)
 options(scipen = 999)
 
 # Load GDP dataset file
-country_gdp <- read.csv(file = 'data/GDP_by_country.csv', stringsAsFactors = FALSE)
+country_gdp <- read.csv("https://raw.githubusercontent.com/info201a-au2022/project-group-6-section-ad/main/data/GDP_by_country.csv")
 
 # Select the most recent year and rename column to prepare for join
 most_recent_gdp <- country_gdp %>% 
