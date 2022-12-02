@@ -10,7 +10,7 @@ library(png)
 intro_panel <- tabPanel(
   "Introduction",
   titlePanel("Olympic Success vs. GDP Analysis"),
-  p(style = "font-size:25px",
+  p(style = "font-size:20px",
     align = "center",
   "The Olympics are the ultimate measure of a nation's best athletes. Lifetimes of training and dedication are spent by 
   individuals attempting to win medals. However, with the same countries typically reaching the top of the medal counts, 
@@ -21,7 +21,7 @@ intro_panel <- tabPanel(
   Olympics, such as historic trends, where correlation is strongest, and how performance is affected in the modern day. 
     To add on to this, we hope to transform our data analysis into visualizations that are informative, as well interactive."),
   h1("Abstract"),
-  p(style = "font-size:25px",
+  p(style = "font-size:20px",
   align = "center",
   "Our main question is, 'How does wealth affect Olympic performance?' This question is important because wealth inequality is 
   arguably the largest factor 
