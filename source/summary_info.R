@@ -1,12 +1,13 @@
 # summary_info.r
+# setwd("~/Documents/info201/assignments/project-group-6-section-ad")
 
 library(tidyverse)
 
-medals_by_country_df <- read.csv("https://raw.githubusercontent.com/info201a-au2022/project-group-6-section-ad/main/data/athlete_events.csv")
+medals_by_country_df <- read.csv(file = 'data/athlete_events.csv')
 
-medals_count_tokyo <- read.csv("https://raw.githubusercontent.com/info201a-au2022/project-group-6-section-ad/main/data/Medals_count_tokyo.csv")
+medals_count_tokyo <- read.csv(file = 'data/Medals count tokyo.csv')
 
-country_gdp <- read.csv("https://raw.githubusercontent.com/info201a-au2022/project-group-6-section-ad/main/data/GDP_by_country.csv")
+country_gdp <- read.csv(file = 'data/GDP_by_country.csv')
 
 
 # find total medal count for each country
@@ -61,6 +62,8 @@ summary_info$summary_above_avg_medals <- joined_medals_df %>%
   select(above_avg) %>% 
   summarize(total = sum(above_avg == TRUE, na.rm = T)) %>% 
   pull()
+
+
 
 
 
