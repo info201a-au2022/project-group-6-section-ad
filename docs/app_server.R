@@ -14,6 +14,7 @@ source('../source/medals time frame.R')
 server <- function(input, output) {
   
   
+  
   output$map <- renderPlotly({
     
     return(build_map(input$map_year))
