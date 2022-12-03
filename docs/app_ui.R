@@ -20,6 +20,7 @@ intro_panel <- tabPanel(
   Olympic games, as well as indescribable fame and recognition. Our project will also analyze the effects of GDP on different aspects of the 
   Olympics, such as historic trends, where correlation is strongest, and how performance is affected in the modern day. 
     To add on to this, we hope to transform our data analysis into visualizations that are informative, as well interactive."),
+  
   h1("Abstract"),
   p(style = "font-size:20px",
   align = "center",
@@ -30,9 +31,16 @@ intro_panel <- tabPanel(
   with how specific sports/athletes are affected by countrywide wealth; to address this concern, 
     we plan to perform comprehensive data analysis on 30+ years of Olympic and GDP history."),
 
-  img( " ", src = "https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.vecteezy.com%2Ffree-vector%2Folympic-torch&psig=AOvVaw0TLZXzl8jeJj1fKZL3XEYt&ust=1670028913727000&source=images&cd=vfe&ved=0CAwQjRxqFwoTCICSuNbc2fsCFQAAAAAdAAAAABAI",
-       alt = "The Olympic Medals",
-       width = 25, height = 25)
+  tags$figure(
+    align = "center",
+    tags$img(
+      src = "olympic_medals.jpg",
+      width = 500,
+      alt = "The Olympic Medals"
+    ),
+    tags$figcaption("The Olympic Medals")
+  )
+    
 )
 
 
