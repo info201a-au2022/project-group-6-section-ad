@@ -105,6 +105,12 @@ time_frame_panel <- tabPanel(
   )
 )
 
+# Tab Panel for Scatter Plot
+scatter_plot_panel <- tabPanel(
+  "Medals vs GDP",
+  titlePanel("Worldwide Medals vs GDP")
+)
+
 # Tab Panel for Summary Takeaways
 summary_panel <- tabPanel(
   "Summary",
@@ -126,6 +132,7 @@ ui <- navbarPage(
 #  barchart_panel,
   map_panel,
   time_frame_panel,
+  scatter_plot_panel,
   summary_panel,
   report_panel,
   theme = shinytheme("darkly")
