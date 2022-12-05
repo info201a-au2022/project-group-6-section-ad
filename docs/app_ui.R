@@ -108,6 +108,18 @@ time_frame_panel <- tabPanel(
 
 # Side Bar Panel for Time Frame
 scatter_sidebar_content <- sidebarPanel(
+  # Y Axis
+  radioButtons(
+    "medals",
+    label = "Medals",
+    choices = list(
+      "Gold" = "gold_medals",
+      "Silver" = "silver_medals",
+      "Bronze" = "bronze_medals"
+    ),
+    selected = "bronze_medals",
+  ),
+  
   # X Axis
   selectInput(
     "GDP",
@@ -128,6 +140,29 @@ scatter_sidebar_content <- sidebarPanel(
       "1992" = "x1992"
     ),
     selected = "2016",
+  ),
+  
+  # Region Selector
+  region_input <- checkboxGroupInput(
+    "region",
+    label = "Global Region",
+    choices = regions_selector,
+    selected = "Europe & Central Asia",
+  ),
+  
+  # Olympics Selector
+  olympic_input <- selectInput(
+    "olympic",
+    label = "Olympics",
+    choices = olympics_selector,
+    selected = "2016 Summer",
+  ),
+  
+  # USA Selector
+  usa_input <- checkboxInput(
+    "usa",
+    label = "Include United States",
+    value = TRUE
   )
 )
 
