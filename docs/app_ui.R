@@ -34,15 +34,15 @@ intro_panel <- tabPanel(
     we plan to perform comprehensive data analysis on 30+ years of Olympic and GDP history."),
   br(),
   
-  tags$figure(
-    align = "center",
-    tags$img(
-      src = "olympic_medals.jpg",
-      width = 500,
-      alt = "The Olympic Medals"
-    ),
-    tags$figcaption("The Olympic Medals")
-  )
+#  tags$figure(
+#    align = "center",
+#    tags$img(
+#      src = "olympic_medals.jpg",
+#      width = 500,
+#      alt = "The Olympic Medals"
+#    ),
+#    tags$figcaption("The Olympic Medals")
+#  )
   
 )
 
@@ -227,7 +227,7 @@ ui <- navbarPage(
   "Olympic Success",
   intro_panel,
   map_panel,
-  #time_frame_panel,
+  time_frame_panel,
   scatter_plot_panel,
   #summary_panel,
   #report_panel,
