@@ -3,7 +3,7 @@ library(shiny)
 library(plotly)
 library(dplyr)
 library(shinythemes)
-library(png)
+
 
 
 # Tab Panel for Introduction
@@ -189,8 +189,32 @@ summary_panel <- tabPanel(
 # Tab Panel for Report
 report_panel <- tabPanel(
   "Report",
-  titlePanel(strong("Olympic Medals by")),
-  p("WRITE PARAGRAPH")
+  tags$figure(
+    align = "center",
+    tags$img(
+      src = "olympic_rings.jpg",
+      width = 500,
+    ),
+    tags$figcaption("The Olympic Logo")
+  ),
+  titlePanel(strong("Olympic Medals Report")),
+  p(style = "font-size:15px",
+    "This project displays a correlation between the GDP of a country and their Olympic success in a certain year. It also serves the purpose to show that despite the Olympics conducting a series of other preventative measures to discourage athletes from having an advantage. There remains other confounding variables that leave some teams/athletes with an advantage over others."
+),
+  sidebarLayout(
+    position = "left",
+    sidebarPanel(
+    h4(strong("About Us")),
+    p("Special thanks to projects members for allocating resources and using R to create this amazing project overviewing how the GDP impacts the Olympic games."),
+    p("Annabelle Haryanto"),
+    p("Ethan Hsu"),
+    p("Kassy Chaput"),
+
+  
+    
+    ),
+  mainPanel()
+  )
 )
 
 # Navigation Bar
