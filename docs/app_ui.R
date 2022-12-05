@@ -122,7 +122,7 @@ scatter_sidebar_content <- sidebarPanel(
     ),
     selected = "bronze_medals",
   ),
-  
+
   # X Axis
   selectInput(
     "GDP",
@@ -144,7 +144,7 @@ scatter_sidebar_content <- sidebarPanel(
     ),
     selected = "2016",
   ),
-  
+
   # Region Selector
   region_input <- checkboxGroupInput(
     "region",
@@ -152,7 +152,7 @@ scatter_sidebar_content <- sidebarPanel(
     choices = regions_selector,
     selected = "Europe & Central Asia",
   ),
-  
+
   # Olympics Selector
   olympic_input <- selectInput(
     "olympic",
@@ -160,7 +160,7 @@ scatter_sidebar_content <- sidebarPanel(
     choices = olympics_selector,
     selected = "2016 Summer",
   ),
-  
+
   # USA Selector
   usa_input <- checkboxInput(
     "usa",
@@ -169,9 +169,9 @@ scatter_sidebar_content <- sidebarPanel(
   )
 )
 
-# Main Panel for Time Frame
-scatter_panel <- mainPanel(
-  plotOutput("scatter")
+# Main Panel for Scatter
+  scatter_panel <- mainPanel(
+    plotOutput("scatter")
 )
 
 # Tab Panel for Scatter Plot
