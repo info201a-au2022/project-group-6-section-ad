@@ -2,7 +2,7 @@ library(tidyverse)
 library(ggplot2)
 library(plotly)
 
-olympic_results <- read_csv("athlete_events.csv.zip")
+
 gdp_info <- read_csv("API_NY.GDP.PCAP.PP.CD_DS2_en_csv_v2_4701271.csv")
 countryinformation <- read.csv("CountryInformation.csv")
 colnames(gdp_info)[2] <- "NOC"

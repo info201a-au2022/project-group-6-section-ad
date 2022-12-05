@@ -72,6 +72,7 @@ olympics_selector <- sort(olympics_selector)
 # Source Functions
 source('../source/gdp map.R')
 source('../source/medals time frame.R')
+source('../source/ScatterVisualization.R')
 
 # Server
 

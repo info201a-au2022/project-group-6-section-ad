@@ -103,6 +103,9 @@ time_frame_panel <- tabPanel(
   sidebarLayout(
     time_frame_sidebar_content,
     time_frame_main_panel
+  ),
+  sidebarPanel(
+    p("This interactive time frame shows the number of medals ")
   )
 )
 
@@ -210,8 +213,6 @@ report_panel <- tabPanel(
     p("Ethan Hsu"),
     p("Kassy Chaput"),
 
-  
-    
     ),
   mainPanel()
   )
