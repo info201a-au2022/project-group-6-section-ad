@@ -90,4 +90,30 @@ server <- function(input, output) {
     return(build_timeframe(input$time_frame))
     
   })
+  
+  output$scatter <- renderPlot({
+    
+    if (input$usa == FALSE) {
+      full_table <- full_table %>% 
+        filter(Team != "United States",
+               Team != "United States-1",
+               Team != "United States-2")
+    }
+    
+    full_table <- full_table %>% 
+      dplyr::filter(Region %in% input$region) %>% 
+      dplyr::filter(Games %in% input$olympic)
+    
+    plot <- ggplot(full_table) + 
+      geom_point(mapping = aes_string(x = input$GDP, y = input$medals), size = 3) +
+      #scale_color_manual(values=c("red", "blue", "green", "yellow", "orange", "purple", "black")) +
+      labs(x = paste(substr(input$GDP, 2, 5), "GDP"),
+           y = "Medal Count") +
+      theme(
+        axis.title.x = element_text(color = "#0099f9", size = 16, face = "italic", margin = margin(t = 3)),
+        axis.title.y = element_text(color = "#0099f9", size = 16, face = "italic")
+      )
+    plot
+    
+  })
 }

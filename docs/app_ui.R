@@ -106,7 +106,7 @@ time_frame_panel <- tabPanel(
   )
 )
 
-# Side Bar Panel for Time Frame
+# Side Bar Panel for Scatter Plot
 scatter_sidebar_content <- sidebarPanel(
   # Y Axis
   radioButtons(
@@ -167,21 +167,23 @@ scatter_sidebar_content <- sidebarPanel(
 )
 
 # Main Panel for Time Frame
-
+scatter_panel <- mainPanel(
+  plotOutput("scatter")
+)
 
 # Tab Panel for Scatter Plot
 scatter_plot_panel <- tabPanel(
   "Medals vs GDP",
   titlePanel("Worldwide Medals vs GDP"),
   scatter_sidebar_content,
-  p("Graph")
+  scatter_panel
 )
 
 # Tab Panel for Summary Takeaways
 summary_panel <- tabPanel(
   "Summary",
   titlePanel("Summary Takeaways"),
-  p("WRITE PARAGRAPH")
+  scatter_panel
 )
 
 # Tab Panel for Report
