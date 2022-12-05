@@ -6,7 +6,7 @@ library(shinythemes)
 library(shinyWidgets)
 
 # Source Scatter Plot Data
-source('../source/big table.R')
+source('big table.R')
 
 # Tab Panel for Introduction
 intro_panel <- tabPanel(
@@ -82,34 +82,34 @@ map_panel <- tabPanel(
   )
 )
 
-# # Side Bar Panel for Time Frame
-# time_frame_sidebar_content <- sidebarPanel(
-#   selectInput(
-#     "time_frame",
-#     label = "Choose a Country",
-#     choices = unique(medals_data$Team),
-#     selected = "United States"
-#   )
-# )
-# 
-# # Main Panel for Time Frame
-# time_frame_main_panel <- mainPanel(
-#   plotlyOutput("timeframe")
-# )
-# 
-# # Tab Panel for Time Frame
-# time_frame_panel <- tabPanel(
-#   "Medals",
-#   titlePanel("Medals Time Frame"),
-#   
-#   sidebarLayout(
-#     time_frame_sidebar_content,
-#     time_frame_main_panel
-#   ),
-#   sidebarPanel(
-#     p("This interactive time frame shows the number of medals ")
-#   )
-# )
+ # Side Bar Panel for Time Frame
+ time_frame_sidebar_content <- sidebarPanel(
+   selectInput(
+     "time_frame",
+     label = "Choose a Country",
+     choices = unique(medals_data$Team),
+     selected = "United States"
+   )
+ )
+ 
+ # Main Panel for Time Frame
+ time_frame_main_panel <- mainPanel(
+   plotlyOutput("timeframe")
+ )
+ 
+ # Tab Panel for Time Frame
+ time_frame_panel <- tabPanel(
+   "Medals",
+   titlePanel("Medals Time Frame"),
+   
+   sidebarLayout(
+     time_frame_sidebar_content,
+     time_frame_main_panel
+   ),
+   sidebarPanel(
+     p("This interactive time frame shows the number of medals ")
+   )
+ )
 
 # Side Bar Panel for Scatter Plot
 scatter_sidebar_content <- sidebarPanel(
@@ -184,52 +184,52 @@ scatter_plot_panel <- tabPanel(
   scatter_panel
 )
 
-# # Tab Panel for Summary Takeaways
-# summary_panel <- tabPanel(
-#   "Summary",
-#   titlePanel("Summary Takeaways"),
-#   p(style = "font-size:15px",
-#     "The 3 main questions "),
-#   scatter_panel
-# )
-# 
-# # Tab Panel for Report
-# report_panel <- tabPanel(
-#   "Report",
-#   tags$figure(
-#     align = "center",
-#     tags$img(
-#       src = "olympic_rings.jpg",
-#       width = 500,
-#     ),
-#     tags$figcaption("The Olympic Logo")
-#   ),
-#   titlePanel(strong("Olympic Medals Report")),
-#   p(style = "font-size:15px",
-#     "This project displays a correlation between the GDP of a country and their Olympic success in a certain year. It also serves the purpose to show that despite the Olympics conducting a series of other preventative measures to discourage athletes from having an advantage. There remains other confounding variables that leave some teams/athletes with an advantage over others."
-#   ),
-#   sidebarLayout(
-#     position = "left",
-#     sidebarPanel(
-#       h4(strong("About Us")),
-#       p("Special thanks to projects members for allocating resources and using R to create this amazing project overviewing how the GDP impacts the Olympic games."),
-#       p("Annabelle Haryanto"),
-#       p("Ethan Hsu"),
-#       p("Kassy Chaput"),
-# 
-#     ),
-#     mainPanel()
-#   )
-# )
+ # Tab Panel for Summary Takeaways
+ summary_panel <- tabPanel(
+   "Summary",
+   titlePanel("Summary Takeaways"),
+   p(style = "font-size:15px",
+     "The 3 main questions "),
+   scatter_panel
+ )
+ 
+ # Tab Panel for Report
+ report_panel <- tabPanel(
+   "Report",
+   tags$figure(
+     align = "center",
+     tags$img(
+       src = "olympic_rings.jpg",
+       width = 500,
+     ),
+     tags$figcaption("The Olympic Logo")
+   ),
+   titlePanel(strong("Olympic Medals Report")),
+   p(style = "font-size:15px",
+     "This project displays a correlation between the GDP of a country and their Olympic success in a certain year. It also serves the purpose to show that despite the Olympics conducting a series of other preventative measures to discourage athletes from having an advantage. There remains other confounding variables that leave some teams/athletes with an advantage over others."
+   ),
+   sidebarLayout(
+     position = "left",
+     sidebarPanel(
+       h4(strong("About Us")),
+       p("Special thanks to projects members for allocating resources and using R to create this amazing project overviewing how the GDP impacts the Olympic games."),
+       p("Annabelle Haryanto"),
+       p("Ethan Hsu"),
+       p("Kassy Chaput"),
+ 
+     ),
+     mainPanel()
+   )
+ )
 
 # Navigation Bar
 ui <- navbarPage(
   "Olympic Success",
   intro_panel,
   map_panel,
-  # time_frame_panel,
+  #time_frame_panel,
   scatter_plot_panel,
-  # summary_panel,
-  # report_panel,
+  #summary_panel,
+  #report_panel,
   theme = shinytheme("darkly")
 )

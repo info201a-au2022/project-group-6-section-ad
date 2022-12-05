@@ -1,0 +1,14 @@
+name: group-6-section-ad
+title: group-6-section-ad
+username:
+account: kassychaput
+server: shinyapps.io
+hostUrl: https://api.shinyapps.io/v1
+appId: 7818621
+bundleId: 6594710
+url: https://kassychaput.shinyapps.io/group-6-section-ad/
+when: 1670261127.26016
+lastSyncTime: 1670261127.26019
+asMultiple: FALSE
+asStatic: FALSE
+ignoredFiles: hello.html|index.html|index.Rmd|p01-proposal.md|README.md|www/olympic_medals.jpg|www/olympic_rings.jpg

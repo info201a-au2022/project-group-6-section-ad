@@ -3,10 +3,6 @@ library(ggplot2)
 library(plotly)
 
 
-gdp_info <- read_csv("API_NY.GDP.PCAP.PP.CD_DS2_en_csv_v2_4701271.csv")
-countryinformation <- read.csv("CountryInformation.csv")
-colnames(gdp_info)[2] <- "NOC"
-
 country_gdp <- read.csv("https://raw.githubusercontent.com/info201a-au2022/project-group-6-section-ad/main/data/GDP_by_country.csv")
 medals_data <- read.csv("https://raw.githubusercontent.com/info201a-au2022/project-group-6-section-ad/main/data/athlete_events.csv")
 countryinformation <- read.csv("https://raw.githubusercontent.com/info201a-au2022/project-group-6-section-ad/main/data/CountryInformation.csv")

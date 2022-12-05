@@ -8,9 +8,9 @@ medals_data <- read.csv("https://raw.githubusercontent.com/info201a-au2022/proje
 countryinformation <- read.csv("https://raw.githubusercontent.com/info201a-au2022/project-group-6-section-ad/main/data/CountryInformation.csv")
 
 # Source Functions
-source('../source/gdp map.R')
-source('../source/medals time frame.R')
-source('../source/big table.R')
+source('gdp map.R')
+source('medals time frame.R')
+source('big table.R')
 
 # Server
 
