@@ -186,6 +186,8 @@ scatter_plot_panel <- tabPanel(
 summary_panel <- tabPanel(
   "Summary",
   titlePanel("Summary Takeaways"),
+  p(style = "font-size:15px",
+    "The 3 main questions "),
   scatter_panel
 )
 

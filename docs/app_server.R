@@ -10,7 +10,7 @@ countryinformation <- read.csv("https://raw.githubusercontent.com/info201a-au202
 # Source Functions
 source('../source/gdp map.R')
 source('../source/medals time frame.R')
-source('../source/ScatterVisualization.R')
+#source('../source/ScatterVisualization.R')
 
 # Server
 
