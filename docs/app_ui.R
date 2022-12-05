@@ -106,10 +106,40 @@ time_frame_panel <- tabPanel(
   )
 )
 
+# Side Bar Panel for Time Frame
+scatter_sidebar_content <- sidebarPanel(
+  # X Axis
+  selectInput(
+    "GDP",
+    label = "GDP Year",
+    choices = list(
+      "2016" = "x2016",
+      "2014" = "x2014",
+      "2012" = "x2012",
+      "2010" = "x2010",
+      "2008" = "x2008",
+      "2006" = "x2006",
+      "2004" = "x2004",
+      "2002" = "x2002",
+      "2000" = "x2000",
+      "1998" = "x1998",
+      "1996" = "x1996",
+      "1994" = "x1994",
+      "1992" = "x1992"
+    ),
+    selected = "2016",
+  )
+)
+
+# Main Panel for Time Frame
+
+
 # Tab Panel for Scatter Plot
 scatter_plot_panel <- tabPanel(
   "Medals vs GDP",
-  titlePanel("Worldwide Medals vs GDP")
+  titlePanel("Worldwide Medals vs GDP"),
+  scatter_sidebar_content,
+  p("Graph")
 )
 
 # Tab Panel for Summary Takeaways
