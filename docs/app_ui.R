@@ -222,7 +222,6 @@ report_panel <- tabPanel(
 ui <- navbarPage(
   "Olympic Success",
   intro_panel, 
-#  barchart_panel,
   map_panel,
   time_frame_panel,
   scatter_plot_panel,
