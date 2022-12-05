@@ -10,7 +10,7 @@ countryinformation <- read.csv("https://raw.githubusercontent.com/info201a-au202
 # Source Functions
 source('../source/gdp map.R')
 source('../source/medals time frame.R')
-#source('../source/ScatterVisualization.R')
+source('../source/big table.R')
 
 # Server
 
@@ -30,9 +30,9 @@ server <- function(input, output) {
     
   })
   
-  output$scatter <- renderPlot({
+  output$scatter <- renderPlotly({
     
-    return(build_scatter(usa, region, olympic, gdp, medals))
-  
+    return(build_scatter(input$medals, input$GDP, input$region, input$olympic, input$usa))
+    
   })
 }
