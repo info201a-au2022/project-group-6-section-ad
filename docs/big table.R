@@ -8,19 +8,22 @@ countryinformation <- read.csv("https://raw.githubusercontent.com/info201a-au202
 colnames(country_gdp)[2] <- "NOC"
 colnames(countryinformation)[1] <- "NOC"
 
+
+medals_data <- unique(medals_data[,c("Sex","Year","NOC","Team","Games","Sport","Event","Medal")])
+
 edit <- medals_data %>% 
   filter(Team == "United States",
          Games == "2016 Summer",
-         Medal == "Gold")
+         Medal == "Silver")
 
 step_1 <- left_join(medals_data, countryinformation, by = "NOC")
 
 full_table <- left_join(step_1, country_gdp, by = "NOC") %>% 
   filter(Year > 1989) %>% 
   filter(!is.na(Medal)) %>% 
-  select(-Season,-Sport,-Sex,-NOC,-Year,-Age,-TableName,-Height,-Weight,-ID,-Name,-City,-Event)  
+  select(-Sex,-Year,-Sport,-NOC,-IncomeGroup,-TableName,-Event)  
  
-full_table <- full_table[,-5:-38]
+full_table <- full_table[,-5:-37]
 
 duplicate_edit <- full_table %>% 
   select(-Games,-Medal) %>% 
