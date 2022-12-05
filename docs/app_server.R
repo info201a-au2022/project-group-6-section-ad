@@ -32,7 +32,7 @@ server <- function(input, output) {
   
   output$scatter <- renderPlot({
     
-    return(plot)
+    return(build_scatter(usa, region, olympic, gdp, medals))
   
   })
 }
