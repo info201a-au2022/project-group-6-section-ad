@@ -9,7 +9,7 @@ library(png)
 # Tab Panel for Introduction
 intro_panel <- tabPanel(
   "Introduction",
-  titlePanel("Olympic Success vs. GDP Analysis"),
+  titlePanel(strong("Olympic Success vs. GDP Analysis")),
   p(style = "font-size:20px",
     align = "center",
   "The Olympics are the ultimate measure of a nation's best athletes. Lifetimes of training and dedication are spent by 
@@ -21,7 +21,7 @@ intro_panel <- tabPanel(
   Olympics, such as historic trends, where correlation is strongest, and how performance is affected in the modern day. 
     To add on to this, we hope to transform our data analysis into visualizations that are informative, as well interactive."),
   
-  h1("Abstract"),
+  h1(strong("Abstract")),
   p(style = "font-size:20px",
   align = "center",
   "Our main question is, 'How does wealth affect Olympic performance?' This question is important because wealth inequality is 
@@ -30,6 +30,7 @@ intro_panel <- tabPanel(
   we will examine how this inequality translates to sports on the world's grandest stage. We are also concerned 
   with how specific sports/athletes are affected by countrywide wealth; to address this concern, 
     we plan to perform comprehensive data analysis on 30+ years of Olympic and GDP history."),
+  br(),
 
   tags$figure(
     align = "center",
@@ -121,7 +122,7 @@ summary_panel <- tabPanel(
 # Tab Panel for Report
 report_panel <- tabPanel(
   "Report",
-  titlePanel("Report"),
+  titlePanel(strong("Olympic Medals by")),
   p("WRITE PARAGRAPH")
 )
 
