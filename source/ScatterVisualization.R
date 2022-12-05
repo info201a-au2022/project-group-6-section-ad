@@ -2,15 +2,15 @@ library(tidyverse)
 library(ggplot2)
 library(plotly)
 
-olympic_results <- read_csv("athlete_events.csv.zip")
-gdp_info <- read_csv("API_NY.GDP.PCAP.PP.CD_DS2_en_csv_v2_4701271.csv")
-countryinformation <- read.csv("CountryInformation.csv")
-colnames(gdp_info)[2] <- "NOC"
+country_gdp <- read.csv("https://raw.githubusercontent.com/info201a-au2022/project-group-6-section-ad/main/data/GDP_by_country.csv")
+medals_data <- read.csv("https://raw.githubusercontent.com/info201a-au2022/project-group-6-section-ad/main/data/athlete_events.csv")
+countryinformation <- read.csv("https://raw.githubusercontent.com/info201a-au2022/project-group-6-section-ad/main/data/CountryInformation.csv")
+colnames(country_gdp)[2] <- "NOC"
 colnames(countryinformation)[1] <- "NOC"
 
-step_1 <- left_join(olympic_results, countryinformation, by = "NOC")
+step_1 <- left_join(medals_data, countryinformation, by = "NOC")
 
-full_table <- left_join(step_1, gdp_info, by = "NOC") %>% 
+full_table <- left_join(step_1, country_gdp, by = "NOC") %>% 
   filter(Year > 1989) %>% 
   filter(!is.na(Medal)) %>% 
   select(-Season,-Sport,-Sex,-NOC,-Year,-Age,-TableName,-Height,-Weight,-ID,-Name,-City,-Event)  
@@ -56,6 +56,15 @@ colnames(full_table)[31] <- "x2014"
 colnames(full_table)[32] <- "x2015"
 colnames(full_table)[33] <- "x2016"
 
+MedalsSelector <- colnames(full_table)[3:5]
+
+# Vector of regions
+regions_selector <- unique(full_table$Region, na.rm = TRUE)
+regions_selector <- regions_selector[!is.na(regions_selector)]
+
+# Vector of olympic games
+olympics_selector <- unique(full_table$Games)
+olympics_selector <- sort(olympics_selector)
 
 if (input$usa == FALSE) {
   full_table <- full_table %>% 
@@ -77,7 +86,7 @@ plot <- ggplot(full_table) +
     axis.title.x = element_text(color = "#0099f9", size = 16, face = "italic", margin = margin(t = 3)),
     axis.title.y = element_text(color = "#0099f9", size = 16, face = "italic")
   )
-plotly(plot)
+plot
 
 
 
