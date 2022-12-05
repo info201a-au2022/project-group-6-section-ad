@@ -105,7 +105,7 @@ time_frame_panel <- tabPanel(
     time_frame_main_panel
   ),
   sidebarPanel(
-    p("This interactive time frame shows the number of medals ")
+    p("This interactive time frame shows the number of medals won by each country.")
   )
 )
 
@@ -187,7 +187,7 @@ summary_panel <- tabPanel(
   "Summary",
   titlePanel("Summary Takeaways"),
   p(style = "font-size:15px",
-    "The 3 main questions "),
+    "The 3 main questions"),
   scatter_panel
 )
 
