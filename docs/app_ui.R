@@ -6,7 +6,7 @@ library(shinythemes)
 library(shinyWidgets)
 
 # Source Scatter Plot Data
-source('big table.R')
+#source('big table.R')
 
 # Tab Panel for Introduction
 intro_panel <- tabPanel(
@@ -34,15 +34,15 @@ intro_panel <- tabPanel(
     we plan to perform comprehensive data analysis on 30+ years of Olympic and GDP history."),
   br(),
   
-#  tags$figure(
-#    align = "center",
-#    tags$img(
-#      src = "olympic_medals.jpg",
-#      width = 500,
-#      alt = "The Olympic Medals"
-#    ),
-#    tags$figcaption("The Olympic Medals")
-#  )
+  tags$figure(
+    align = "center",
+    tags$img(
+      src = "olympic_medals.jpg",
+      width = 500,
+      alt = "The Olympic Medals"
+    ),
+    tags$figcaption("The Olympic Medals")
+  )
   
 )
 
@@ -230,6 +230,6 @@ ui <- navbarPage(
   time_frame_panel,
   scatter_plot_panel,
   #summary_panel,
-  #report_panel,
+  report_panel,
   theme = shinytheme("darkly")
 )
