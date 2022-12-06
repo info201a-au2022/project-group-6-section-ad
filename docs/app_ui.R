@@ -22,8 +22,18 @@ intro_panel <- tabPanel(
   Olympic games, as well as indescribable fame and recognition. Our project will also analyze the effects of GDP on different aspects of the 
   Olympics, such as historic trends, where correlation is strongest, and how performance is affected in the modern day. 
     To add on to this, we hope to transform our data analysis into visualizations that are informative, as well interactive."),
+  tags$figure(
+    align = "center",
+    tags$img(
+      src = "olympic_medals.jpg",
+      width = 500,
+      alt = "The Olympic Medals"
+    ),
+    tags$figcaption("The Olympic Medals")
+  ),
   
   h1(strong("Abstract")),
+  br(),
   p(style = "font-size:20px",
     align = "center",
     "Our main question is, 'How does wealth affect Olympic performance?' This question is important because wealth inequality is 
@@ -33,16 +43,47 @@ intro_panel <- tabPanel(
   with how specific sports/athletes are affected by countrywide wealth; to address this concern, 
     we plan to perform comprehensive data analysis on 30+ years of Olympic and GDP history."),
   br(),
+  h1(strong("Problem Domain")),
   
-  tags$figure(
-    align = "center",
-    tags$img(
-      src = "olympic_medals.jpg",
-      width = 500,
-      alt = "The Olympic Medals"
+  br(),
+  
+  p(style = "font-size:20px",
+    "The Olympic games are one of the most important games for countries, it occurs once in 4 years. There are two types, winter and summer. The Olympic games consists of many varieties of sports and most countries invest a tremendous amount of money into their country’s athletes. According to the article in Forbes written by Brett Knight, Knight mentions that in the last winter Olympic games that was held in Beijing 2022, Italy won 17 gold medals and the Italian athletes got $201,000 each for every gold medal they won. Knight provided a table based on the medal bonus spending by countries and Italy was giving out the largest amount of money to their athletes.",
+    br(),
+    "We are trying to find out how a countries’ GDP affects the success of winning the most medals in the Olympic games over time. We believe that countries with higher GDP are able to win more medals as they have more access to resources (i.e. money) to deeply invest in training facilities, the best coaches and also even provide athletes with big payouts so that they are more motivated to win more gold medals. Wining the most gold medals in the Olympics provides the country with more global recognition and 'good' reputation.",
+    br(),
+    "Direct stakeholder for our research would be the country itself. They are the ones who provide everything for their athletes in order for them to represent their home country in the Olympics. In order for a country to join the Olympics, the country needs a National Olympic Committee (NOC) that is recognized by the International Olympic Committee (IOC). We personally think that a countries’ GDP affects the success in winning the most gold medals because as we have mentioned before richer countries are able to provide a “better” training facility for their athletes.",
+    br(),
+    "Indirect stakeholders for our research would be the athletes themselves or maybe even their citizens. As they are indirectly involved in the Olympic games. Mostly developed countries are the ones who are able to afford to host the Olympic games. According to McBride and Manno, many cities invest millions of dollars in evaluating, preparing, and submitting a bid to the IOC. Tokyo, Japan bidded $150 million and failed in 2016. This shows how much countries are willing to invest. The possible harm is that we think that countries who do not get winter are not able to gain the advantage to win. The possible benefit for countries is that they are able to get recognition globally."
     ),
-    tags$figcaption("The Olympic Medals")
-  )
+  
+  br(),
+  h2(strong("Research Question")),
+  br(),
+  p(style = "font-size:20px",
+     "1. Does a positive correlation between a countries' GDP and their overall medal count at the Olympics exists?"
+    ),
+  p(style = "font-size:20px",
+    "2. How has this relationship between GDP and Olympic medal count changed over time?"
+    ),
+  p(style = "font-size:20px",
+    "3. Does the GDP appears to impact the Winter or Summer Olympics more?"
+    ),
+  br(),
+  h2(strong("Data")),
+  br(),
+  p(style = "font-size:20px",
+    "Our first dataset is entitled “120 years of Olympic history: athletes and results” which provides an overall general summary of every athlete that has competed in the Olympics ranging from Athens 1896 to Rio 2016. This serves a crucial purpose to analyze how the Olympics have changed over time in regard to medal count for each country. This will help to analyze the second research question posed because the vast range of dates included in this dataset will provide a broad picture of how things have changed over such a vast period. This data was collected by sports-reference.com because of an enthusiasm for the Olympics. We have obtained this data through Kaggle, a web-based dataset environment from the author rgriffin who created this dataset to make observations and patterns about the Olympics clear over time."
+    ),
+  p(style = "font-size:20px",
+    "Our second dataset is entitled “Country Information” which provides a brief overview of each country in our project, along with the region in which it is located, its respective country code and its categorized income group. This is crucial to our overall analysis and second research question in particular because when grouped with our first dataset it provides excellent potential for creation of a visualization about which countries perform better in comparison to which countries have a higher income group. Similarly to our next dataset, this was collected by the World Bank thus leading us to believe this is a credible source due to it having a well-known and reliable reputation."
+    ),
+  p(style = "font-size:20px",
+    "Our final dataset is entitled “GDP per capita, PPP (current international $)” which provides an overview of each country's average GDP across the span of 31 years (1990-2021). This data provides the economic information needed for each country to complete the comparison between GDP and Olympic success, thus aiding our answers for all of the posed research questions. This data was collected by the World Bank, a reputable organization and it is updated annually leading us to believe that this data is credible. We have obtained this data straight from the World Bank website which has also been credited below in our citations."
+    ),
+  br(),
+  
+  
   
 )
 
@@ -107,7 +148,7 @@ map_panel <- tabPanel(
      time_frame_main_panel
    ),
    sidebarPanel(
-     p("This interactive time frame shows the number of medals ")
+     p("This interactive time frame shows the number of medals won by each country.")
    )
  )
 
@@ -183,7 +224,7 @@ scatter_plot_panel <- tabPanel(
   scatter_sidebar_content,
   scatter_panel
 )
-<<<<<<< HEAD
+
 
 # Tab Panel for Summary Takeaways
 summary_panel <- tabPanel(
@@ -222,7 +263,7 @@ report_panel <- tabPanel(
   mainPanel()
   )
 )
-=======
+
  
  # Tab panel for Summary
  summary_panel <- tabPanel(
@@ -260,7 +301,7 @@ report_panel <- tabPanel(
      mainPanel()
    )
  )
->>>>>>> 14ec6631e36f3eca3fbcd4b41821f7d1a1edbe39
+
 
 # Navigation Bar
 ui <- navbarPage(
