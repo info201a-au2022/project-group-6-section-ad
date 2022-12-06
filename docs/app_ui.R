@@ -4,6 +4,7 @@ library(plotly)
 library(dplyr)
 library(shinythemes)
 library(shinyWidgets)
+library(devtools)
 
 # Source Scatter Plot Data
 #source('big table.R')
@@ -48,12 +49,18 @@ intro_panel <- tabPanel(
   br(),
   
   p(style = "font-size:20px",
-    "The Olympic games are one of the most important games for countries, it occurs once in 4 years. There are two types, winter and summer. The Olympic games consists of many varieties of sports and most countries invest a tremendous amount of money into their country’s athletes. According to the article in Forbes written by Brett Knight, Knight mentions that in the last winter Olympic games that was held in Beijing 2022, Italy won 17 gold medals and the Italian athletes got $201,000 each for every gold medal they won. Knight provided a table based on the medal bonus spending by countries and Italy was giving out the largest amount of money to their athletes.",
-    br(),
-    "We are trying to find out how a countries’ GDP affects the success of winning the most medals in the Olympic games over time. We believe that countries with higher GDP are able to win more medals as they have more access to resources (i.e. money) to deeply invest in training facilities, the best coaches and also even provide athletes with big payouts so that they are more motivated to win more gold medals. Wining the most gold medals in the Olympics provides the country with more global recognition and 'good' reputation.",
-    br(),
-    "Direct stakeholder for our research would be the country itself. They are the ones who provide everything for their athletes in order for them to represent their home country in the Olympics. In order for a country to join the Olympics, the country needs a National Olympic Committee (NOC) that is recognized by the International Olympic Committee (IOC). We personally think that a countries’ GDP affects the success in winning the most gold medals because as we have mentioned before richer countries are able to provide a “better” training facility for their athletes.",
-    br(),
+    "The Olympic games are one of the most important games for countries, it occurs once in 4 years. There are two types, winter and summer. The Olympic games consists of many varieties of sports and most countries invest a tremendous amount of money into their country’s athletes. According to the article in Forbes written by Brett Knight, Knight mentions that in the last winter Olympic games that was held in Beijing 2022, Italy won 17 gold medals and the Italian athletes got $201,000 each for every gold medal they won. Knight provided a table based on the medal bonus spending by countries and Italy was giving out the largest amount of money to their athletes."
+    ),
+    
+  p(style = "font-size:20px", 
+    "We are trying to find out how a countries’ GDP affects the success of winning the most medals in the Olympic games over time. We believe that countries with higher GDP are able to win more medals as they have more access to resources (i.e. money) to deeply invest in training facilities, the best coaches and also even provide athletes with big payouts so that they are more motivated to win more gold medals. Wining the most gold medals in the Olympics provides the country with more global recognition and 'good' reputation."
+    ),
+    
+  p(style = "font-size:20px",
+    "Direct stakeholder for our research would be the country itself. They are the ones who provide everything for their athletes in order for them to represent their home country in the Olympics. In order for a country to join the Olympics, the country needs a National Olympic Committee (NOC) that is recognized by the International Olympic Committee (IOC). We personally think that a countries’ GDP affects the success in winning the most gold medals because as we have mentioned before richer countries are able to provide a “better” training facility for their athletes."
+    ),
+    
+  p(style = "font-size:20px",
     "Indirect stakeholders for our research would be the athletes themselves or maybe even their citizens. As they are indirectly involved in the Olympic games. Mostly developed countries are the ones who are able to afford to host the Olympic games. According to McBride and Manno, many cities invest millions of dollars in evaluating, preparing, and submitting a bid to the IOC. Tokyo, Japan bidded $150 million and failed in 2016. This shows how much countries are willing to invest. The possible harm is that we think that countries who do not get winter are not able to gain the advantage to win. The possible benefit for countries is that they are able to get recognition globally."
     ),
   
@@ -69,7 +76,16 @@ intro_panel <- tabPanel(
   p(style = "font-size:20px",
     "3. Does the GDP appears to impact the Winter or Summer Olympics more?"
     ),
-  br(),
+  tags$figure(
+    align = "center",
+    tags$img(
+      src = "olympic_torch.jpg",
+      width = 500,
+      alt = "The Olympic Medals"
+    ),
+    tags$figcaption("The Olympic Torch")
+  ),  
+
   h2(strong("Data")),
   br(),
   p(style = "font-size:20px",
@@ -148,7 +164,9 @@ map_panel <- tabPanel(
      time_frame_main_panel
    ),
    sidebarPanel(
-     p("This interactive time frame shows the number of medals won by each country.")
+     p("This interactive time frame shows the number of medals won by each country."),
+     p("As seen from the previous two data visualizations, the United States is among the top in both GDP production and Olympic success, this time graph goes further in depth tracking the United States' Olympic success over time. This reveals that the United States has had relatively stable success in the Olympics until 1980. After 1980, the United States has had varied success, some years total medal count is nearly 750, where as others it is closer to 250. This difference may be due to the Olympics being held every 2 years and staggering Winter and Summer Olympics after 1986. We can see that in the year 1992, the United States won the most medals and after that, the graph fluctuates over the years until 2016."
+       )
    )
  )
 
@@ -308,8 +326,18 @@ report_panel <- tabPanel(
  
      ),
      mainPanel()
+   ),
+   sidebarLayout(
+     position = "right",
+     sidebarPanel(
+       h4(strong("Acknowledgements")),
+       p("We as a group are grateful to all of those with whom we have had the pleasure to work during this website and research projects. We would like to say thank you to our TA, Yubing Tian
+         as she helped us resolve numerous coding problems as well as further explaining to us what the prompt meant. We are grateful amongst ourselves as well because we are able to get together to resolve each other's issues. And also that there was good communication amongst ourselves so that we are not behind on any group project assignments."
+         ),
+     ),
+    mainPanel()
    )
- )
+)
 
 
 # Navigation Bar
