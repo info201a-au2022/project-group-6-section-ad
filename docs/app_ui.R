@@ -183,14 +183,13 @@ scatter_plot_panel <- tabPanel(
   scatter_sidebar_content,
   scatter_panel
 )
-
- # Tab Panel for Summary Takeaways
+ 
+ # Tab panel for Summary
  summary_panel <- tabPanel(
    "Summary",
    titlePanel("Summary Takeaways"),
    p(style = "font-size:15px",
-     "The 3 main questions "),
-   scatter_panel
+     "The 3 main questions")
  )
  
  # Tab Panel for Report
@@ -229,7 +228,7 @@ ui <- navbarPage(
   map_panel,
   time_frame_panel,
   scatter_plot_panel,
-  #summary_panel,
+  summary_panel,
   report_panel,
   theme = shinytheme("darkly")
 )
