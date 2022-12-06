@@ -214,7 +214,16 @@ scatter_sidebar_content <- sidebarPanel(
 
 # Main Panel for Scatter
 scatter_panel <- mainPanel(
-  plotlyOutput("scatter")
+  plotlyOutput("scatter"),
+  br(),
+  p(style = "font-size:20px",
+    "The purpose of this scatter plot is to display the relationship between a nation’s medal count and GDP per capita. 
+    This allows us to analyze the correlation between these two variables. A user can specify the  region(s) they want 
+    to display, the GDP year, medal type, and the olympic games. Whether to include the U.S. is also an option as the 
+    American’s high medal count can distort the plot. Overall, a positive slope indicates that there is a positive correlation 
+    between GDP per capita and medal count. A negative slope indicates a negative correlation, and neither indicates no correlation. 
+    Through clicking the various widgets, we can see that countries from the region “Europe & Central Asia” generally have both the 
+    highest GDP per capita and high medal count.")
 )
 
 # Tab Panel for Scatter Plot
