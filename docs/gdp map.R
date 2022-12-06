@@ -14,8 +14,13 @@ build_map <- function(year_choice) {
 
   # Select the year and rename column to prepare for join
   most_recent_gdp <- country_gdp %>% 
-    select(Country.Name, year_choice) %>% 
-    rename("region" = "Country.Name")
+    rename("region" = "Country Name") %>%
+    rename("X2021" = "2021") %>% 
+    rename("X2016" = "2016") %>% 
+    rename("X2011" = "2011") %>% 
+    rename("X2006" = "2006") %>% 
+    rename("X2001" = "2001") %>% 
+    select(region, year_choice)
   
   # Rename some elements to match the region in the map dataframe
   most_recent_gdp[most_recent_gdp == "United States"] <- "USA"

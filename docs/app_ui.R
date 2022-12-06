@@ -3,8 +3,10 @@ library(shiny)
 library(plotly)
 library(dplyr)
 library(shinythemes)
+library(shinyWidgets)
 
-
+# Source Scatter Plot Data
+#source('big table.R')
 
 # Tab Panel for Introduction
 intro_panel <- tabPanel(
@@ -12,7 +14,7 @@ intro_panel <- tabPanel(
   titlePanel(strong("Olympic Success vs. GDP Analysis")),
   p(style = "font-size:20px",
     align = "center",
-  "The Olympics are the ultimate measure of a nation's best athletes. Lifetimes of training and dedication are spent by 
+    "The Olympics are the ultimate measure of a nation's best athletes. Lifetimes of training and dedication are spent by 
   individuals attempting to win medals. However, with the same countries typically reaching the top of the medal counts, 
   many fans point to money as the main driver for success. 
   Our project aims to explore this relationship; specifically, we will examine the effects of GDP on Olympic success. 
@@ -23,15 +25,15 @@ intro_panel <- tabPanel(
   
   h1(strong("Abstract")),
   p(style = "font-size:20px",
-  align = "center",
-  "Our main question is, 'How does wealth affect Olympic performance?' This question is important because wealth inequality is 
+    align = "center",
+    "Our main question is, 'How does wealth affect Olympic performance?' This question is important because wealth inequality is 
   arguably the largest factor 
   in global politics, and a controversial issue. To address this question, 
   we will examine how this inequality translates to sports on the world's grandest stage. We are also concerned 
   with how specific sports/athletes are affected by countrywide wealth; to address this concern, 
     we plan to perform comprehensive data analysis on 30+ years of Olympic and GDP history."),
   br(),
-
+  
   tags$figure(
     align = "center",
     tags$img(
@@ -41,7 +43,7 @@ intro_panel <- tabPanel(
     ),
     tags$figcaption("The Olympic Medals")
   )
-    
+  
 )
 
 
@@ -73,41 +75,41 @@ map_main_panel <- mainPanel(
 map_panel <- tabPanel(
   "GDP by Country",
   titlePanel("GDP by Country"),
-  
+
   sidebarLayout(
     map_sidebar_content,
     map_main_panel
   )
 )
 
-# Side Bar Panel for Time Frame
-time_frame_sidebar_content <- sidebarPanel(
-  selectInput(
-    "time_frame",
-    label = "Choose a Country",
-    choices = unique(medals_data$Team),
-    selected = "United States"
-  )
-)
-
-# Main Panel for Time Frame
-time_frame_main_panel <- mainPanel(
-  plotlyOutput("timeframe")
-)
-
-# Tab Panel for Time Frame
-time_frame_panel <- tabPanel(
-  "Medals",
-  titlePanel("Medals Time Frame"),
-  
-  sidebarLayout(
-    time_frame_sidebar_content,
-    time_frame_main_panel
-  ),
-  sidebarPanel(
-    p("This interactive time frame shows the number of medals won by each country.")
-  )
-)
+ # Side Bar Panel for Time Frame
+ time_frame_sidebar_content <- sidebarPanel(
+   selectInput(
+     "time_frame",
+     label = "Choose a Country",
+     choices = unique(medals_data$Team),
+     selected = "United States"
+   )
+ )
+ 
+ # Main Panel for Time Frame
+ time_frame_main_panel <- mainPanel(
+   plotlyOutput("timeframe")
+ )
+ 
+ # Tab Panel for Time Frame
+ time_frame_panel <- tabPanel(
+   "Medals",
+   titlePanel("Medals Time Frame"),
+   
+   sidebarLayout(
+     time_frame_sidebar_content,
+     time_frame_main_panel
+   ),
+   sidebarPanel(
+     p("This interactive time frame shows the number of medals ")
+   )
+ )
 
 # Side Bar Panel for Scatter Plot
 scatter_sidebar_content <- sidebarPanel(
@@ -122,7 +124,7 @@ scatter_sidebar_content <- sidebarPanel(
     ),
     selected = "bronze_medals",
   ),
-
+  
   # X Axis
   selectInput(
     "GDP",
@@ -144,7 +146,7 @@ scatter_sidebar_content <- sidebarPanel(
     ),
     selected = "2016",
   ),
-
+  
   # Region Selector
   region_input <- checkboxGroupInput(
     "region",
@@ -152,7 +154,7 @@ scatter_sidebar_content <- sidebarPanel(
     choices = regions_selector,
     selected = "Europe & Central Asia",
   ),
-
+  
   # Olympics Selector
   olympic_input <- selectInput(
     "olympic",
@@ -160,7 +162,7 @@ scatter_sidebar_content <- sidebarPanel(
     choices = olympics_selector,
     selected = "2016 Summer",
   ),
-
+  
   # USA Selector
   usa_input <- checkboxInput(
     "usa",
@@ -170,8 +172,8 @@ scatter_sidebar_content <- sidebarPanel(
 )
 
 # Main Panel for Scatter
-  scatter_panel <- mainPanel(
-    plotOutput("scatter")
+scatter_panel <- mainPanel(
+  plotlyOutput("scatter")
 )
 
 # Tab Panel for Scatter Plot
@@ -181,6 +183,7 @@ scatter_plot_panel <- tabPanel(
   scatter_sidebar_content,
   scatter_panel
 )
+<<<<<<< HEAD
 
 # Tab Panel for Summary Takeaways
 summary_panel <- tabPanel(
@@ -219,11 +222,50 @@ report_panel <- tabPanel(
   mainPanel()
   )
 )
+=======
+ 
+ # Tab panel for Summary
+ summary_panel <- tabPanel(
+   "Summary",
+   titlePanel("Summary Takeaways"),
+   p(style = "font-size:15px",
+     "The 3 main questions")
+ )
+ 
+ # Tab Panel for Report
+ report_panel <- tabPanel(
+   "Report",
+   tags$figure(
+     align = "center",
+     tags$img(
+       src = "olympic_rings.jpg",
+       width = 500,
+     ),
+     tags$figcaption("The Olympic Logo")
+   ),
+   titlePanel(strong("Olympic Medals Report")),
+   p(style = "font-size:15px",
+     "This project displays a correlation between the GDP of a country and their Olympic success in a certain year. It also serves the purpose to show that despite the Olympics conducting a series of other preventative measures to discourage athletes from having an advantage. There remains other confounding variables that leave some teams/athletes with an advantage over others."
+   ),
+   sidebarLayout(
+     position = "left",
+     sidebarPanel(
+       h4(strong("About Us")),
+       p("Special thanks to projects members for allocating resources and using R to create this amazing project overviewing how the GDP impacts the Olympic games."),
+       p("Annabelle Haryanto"),
+       p("Ethan Hsu"),
+       p("Kassy Chaput"),
+ 
+     ),
+     mainPanel()
+   )
+ )
+>>>>>>> 14ec6631e36f3eca3fbcd4b41821f7d1a1edbe39
 
 # Navigation Bar
 ui <- navbarPage(
   "Olympic Success",
-  intro_panel, 
+  intro_panel,
   map_panel,
   time_frame_panel,
   scatter_plot_panel,
