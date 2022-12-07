@@ -6,8 +6,6 @@ library(shinythemes)
 library(shinyWidgets)
 library(devtools)
 
-# Source Scatter Plot Data
-#source('big table.R')
 
 # Tab Panel for Introduction
 intro_panel <- tabPanel(
@@ -120,7 +118,16 @@ map_sidebar_content <- sidebarPanel(
     label = "Choose a Year",
     choices = year_choices,
     selected = year_choices[1]
-  )
+  ),
+  p("This map is included to visualize the Gross Domestic Product (GDP) per capita by
+    each country from data collected at the end of 2021. This can be used to achieve
+    a broad overview of the economy in every country across the world. The countries
+    with the darkest green color have the highest GDP such as the United States,
+    Australia, and a few countries in Europe. Those with a lighter green color have a
+    lower GDP production such as many of the countries in both Africa and South America.
+    The countries with high GDP (darker color) can also further be compared to the bar
+    chart below to help determine if a correlation between high GDP and Olympic success
+    exists.")
 )
 
 # Main Panel for Map
