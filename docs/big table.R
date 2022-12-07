@@ -92,6 +92,7 @@ build_scatter <- function(medal, year, region, olympics, usa = TRUE) {
   # create plot
   plot <- ggplot(full_table) + 
     geom_point(mapping = aes_string(x = year, y = medal, color = "Region"), size = 3) +
+    ggtitle("Medals vs GDP Per Capita") +
     labs(x = paste(substr(year, 2, 5), "GDP Per Capita ($)"),
          y = "Medal Count") +
     scale_x_continuous(label=comma) +
