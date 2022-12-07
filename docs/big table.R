@@ -1,6 +1,7 @@
 library(tidyverse)
 library("ggplot2")
 library(plotly)
+library(scales)
 
 medals_data <- read_csv("https://raw.githubusercontent.com/info201a-au2022/project-group-6-section-ad/main/data/athlete_events.csv")
 country_gdp <- read_csv("https://raw.githubusercontent.com/info201a-au2022/project-group-6-section-ad/main/data/GDP_by_country.csv")
@@ -91,9 +92,9 @@ build_scatter <- function(medal, year, region, olympics, usa = TRUE) {
   # create plot
   plot <- ggplot(full_table) + 
     geom_point(mapping = aes_string(x = year, y = medal, color = "Region"), size = 3) +
-    #scale_color_manual(values=c("red", "blue", "green", "yellow", "orange", "purple", "black")) +
     labs(x = paste(substr(year, 2, 5), "GDP Per Capita ($)"),
          y = "Medal Count") +
+    scale_x_continuous(label=comma) +
     theme(
       axis.title.x = element_text(color = "#0099f9", size = 16, face = "italic", margin = margin(t = 3)),
       axis.title.y = element_text(color = "#0099f9", size = 16, face = "italic")
