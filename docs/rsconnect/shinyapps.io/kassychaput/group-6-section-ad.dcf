@@ -5,10 +5,10 @@ account: kassychaput
 server: shinyapps.io
 hostUrl: https://api.shinyapps.io/v1
 appId: 7818621
-bundleId: 6596524
+bundleId: 6611689
 url: https://kassychaput.shinyapps.io/group-6-section-ad/
-when: 1670285241.4313
-lastSyncTime: 1670285241.43132
+when: 1670525035.59011
+lastSyncTime: 1670525035.59012
 asMultiple: FALSE
 asStatic: FALSE
 ignoredFiles: hello.html|index.html|index.Rmd|p01-proposal.md|README.md
