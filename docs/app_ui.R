@@ -11,6 +11,9 @@ library(devtools)
 intro_panel <- tabPanel(
   "Introduction",
   titlePanel(strong("Olympic Success vs. GDP Analysis")),
+  p(style = "font-size:25px",
+    "Authors: Annabelle Haryanto (ayna27@uw.edu), Ethan Hsu (ehsu7@uw.edu), Kassy Chaput(kassyc2@uw.edu)"),
+  p(style = "font-size:22px", "Code Name: Tokyo 2021"),
   p(style = "font-size:20px",
     align = "center",
     "The Olympics are the ultimate measure of a nation's best athletes. Lifetimes of training and dedication are spent by 
@@ -153,7 +156,17 @@ map_panel <- tabPanel(
      label = "Choose a Country",
      choices = unique(medals_data$Team),
      selected = "United States"
-   )
+   ),
+   p("This interactive time frame shows the number of medals won by each country."),
+   p("As seen from the previous two data visualizations, the United States is among 
+     the top in both GDP production and Olympic success, this time graph goes further
+     in depth tracking the United States' Olympic success over time. This reveals that
+     the United States has had relatively stable success in the Olympics until 1980.
+     After 1980, the United States has had varied success, some years total medal count
+     is nearly 750, where as others it is closer to 250. This difference may be due to
+     the Olympics being held every 2 years and staggering Winter and Summer Olympics
+     after 1986. We can see that in the year 1992, the United States won the most medals
+     and after that, the graph fluctuates over the years until 2016.")
  )
  
  # Main Panel for Time Frame
@@ -169,11 +182,6 @@ map_panel <- tabPanel(
    sidebarLayout(
      time_frame_sidebar_content,
      time_frame_main_panel
-   ),
-   sidebarPanel(
-     p("This interactive time frame shows the number of medals won by each country."),
-     p("As seen from the previous two data visualizations, the United States is among the top in both GDP production and Olympic success, this time graph goes further in depth tracking the United States' Olympic success over time. This reveals that the United States has had relatively stable success in the Olympics until 1980. After 1980, the United States has had varied success, some years total medal count is nearly 750, where as others it is closer to 250. This difference may be due to the Olympics being held every 2 years and staggering Winter and Summer Olympics after 1986. We can see that in the year 1992, the United States won the most medals and after that, the graph fluctuates over the years until 2016."
-       )
    )
  )
 
@@ -264,21 +272,48 @@ scatter_plot_panel <- tabPanel(
  # Tab panel for Summary
  summary_panel <- tabPanel(
    "Summary",
-   titlePanel("Summary Takeaways"),
+   titlePanel("Summary Takeaways/Findings"),
    p(style = "font-size:15px",
-     "Our 3 initial questions before starting this assignment were “Does a positive correlation between a countries’ GDP and their overall medal count at the Olympics exist?”, “How has this relationship between GDP and Olympic medal count changed over time?” and “Our final question is to investigate if GDP appears to impact the Winter or Summer Olympics more?”. As we dive deeper into our research we found that there is a positive correlation between a countries’ GDP and their overall medal count at the Olympics does truly exist as countries with high GDP are more likely to win more medals. This is simply because they are able to provide their athletes with the best training, they are willing to invest deeply in them which means that the country truly cares and supports their respective athletes."
+     "Our 3 initial questions before starting this assignment were “Does a positive
+     correlation between a countries’ GDP and their overall medal count at the Olympics
+     exist?”, “How has this relationship between GDP and Olympic medal count changed
+     over time?” and “Our final question is to investigate if GDP appears to impact
+     the Winter or Summer Olympics more?”. As we dive deeper into our research we found
+     that there is a positive correlation between a countries’ GDP and their overall
+     medal count at the Olympics does truly exist as countries with high GDP are more
+     likely to win more medals. This is simply because they are able to provide their
+     athletes with the best training, they are willing to invest deeply in them which
+     means that the country truly cares and supports their respective athletes."
    ),
    br(),
    p(style = "font-size:15px",
-     "Also countries with all 4 seasons may likely win most medals as they have the facility and the opportunity to conduct both summer and the winter Olympics. Throughout our research, we have also found that the level of income of each athlete impacts the success of their ability to gain the medals. Athletes with higher income are highly likely to win more medals than those with lower income as they might not be exposed to a better training system towards the Olympics."
+     "Also countries with all 4 seasons may likely win most medals as they have the
+     facility and the opportunity to conduct both summer and the winter Olympics. 
+     Throughout our research, we have also found that the level of income of each athlete
+     impacts the success of their ability to gain the medals. Athletes with higher income
+     are highly likely to win more medals than those with lower income as they might
+     not be exposed to a better training system towards the Olympics."
    ),
    br(),
    p(style = "font-size:15px",
-     "Although countries with higher GDP are more likely to win more medals, countries with lower GDP are also able to win medals but not as much. The Olympic is a very competitive sport for athletes and it will still remain tough to succeed whether it is in the Summer or Winter as they are both equally tough. Hard work and dedication is very important if they want to succeed in winning more medals."
+     "Although countries with higher GDP are more likely to win more medals, countries
+     with lower GDP are also able to win medals but not as much. The Olympic is a very
+     competitive sport for athletes and it will still remain tough to succeed whether
+     it is in the Summer or Winter as they are both equally tough. Hard work and
+     dedication is very important if they want to succeed in winning more medals."
    ),
    br(),
    p(style = "font-size:15px",
-     "Money plays a big factor in the Olympics as spending on these Olympic athletes is relatively expensive. Countries with higher GDP are able to budget more of their spending on them as they are able to allocate their spending more on them. Take the U.S. in 1980, their medal count dropped significantly due to the economic recession. This evidently shows us how the GDP affects the Olympics. Lastly, we could say that it depends on the country. We feel that countries with all 4 seasons are able to benefit greatly from this because the resources for them to train are available and tropical countries are not exposed to the winter weather. To succeed in the Olympics is tough, with the right skill and determination, the country will then be able to compete and succeed."
+     "Money plays a big factor in the Olympics as spending on these Olympic athletes
+     is relatively expensive. Countries with higher GDP are able to budget more of
+     their spending on them as they are able to allocate their spending more on them.
+     Take the U.S. in 1980, their medal count dropped significantly due to the economic
+     recession. This evidently shows us how the GDP affects the Olympics. Lastly, 
+     we could say that it depends on the country. We feel that countries with all
+     4 seasons are able to benefit greatly from this because the resources for them
+     to train are available and tropical countries are not exposed to the winter weather.
+     To succeed in the Olympics is tough, with the right skill and determination, the
+     country will then be able to compete and succeed."
    ),
  )
  
@@ -297,6 +332,93 @@ scatter_plot_panel <- tabPanel(
    p(style = "font-size:15px",
      "This project displays a correlation between the GDP of a country and their Olympic success in a certain year. It also serves the purpose to show that despite the Olympics conducting a series of other preventative measures to discourage athletes from having an advantage. There remains other confounding variables that leave some teams/athletes with an advantage over others."
    ),
+   h1(strong("Expected Implications:")),
+   p(style = "font-size:15px",
+     "Our findings can have major implications for the future of Olympic performance. 
+     For a given nation's National Olympic Committee (the organization that oversees 
+     performance in each country), they may gain insight into which competitions give
+     them the best chance to medal. For example, if we find countries with lower GDPs
+     do best in winter olympics, the NOCs of those countries may invest millions into
+     the development of winter athletes. This may then lead to more competition in
+     qualifying for the winter olympics. Another implication may be that of advertisers.
+     Because an advertiser’s main goal is to draw eyes, they will be keen to find out
+     which competitions the most wealthy nations do best in. Given we find how
+     performance (and in turn viewership) is trending for a country, advertisers will
+     use this data to make decisions on how to invest. For example, a Brazilian company
+     may increase their advertisements in the sports Brazil is trending upwards in."),
+   h1(strong("Limitations:")),
+   p(style = "font-size:15px",
+     "Given available datasets, a limitation we might need to address is the lack of GDP
+     data from 1896-1990 (our Olympic dataset includes these years). Because of this
+     mismatch in years, we could do an analysis on medal count throughout this period
+     (without GDP data) to account for the missing data. Another limitation we may need
+     to address is that our GDP dataset is per capita. In our visualization, I imagine we
+     will want to use total GDP at some point; to address this, we will need to account
+     for population to reach this metric. A final limitation we may encounter is given
+     the amount of data we have, can we reasonably reach valid conclusions or may they
+     be a coincidence? This will be the main issue with our project; however, to address
+     this we will run a number of tests on the datasets as a whole. Our sample sizes will
+     be larger, and our data analysis will be comprehensive."),
+   h1(strong("Discussion:")),
+   p(style = "font-size:15px",
+     "Based on our findings, there are a number of implications for athletes, Olympic
+     officials, and advertisers. For athletes, their respective country of representation
+     may be directly affected by our data. In nations where it is hyper competitive just
+     to qualify, there are likely a number of quality athletes who miss out on the
+     competition even though they are of olympic standard. A similar phenomenon exists in
+     other international competitions such as the FIFA World Cup, where players who do not
+     make the Brazilian team (for example) choose to represent their parent’s birth country.
+     Athletes may even go as far as gaining citizenship in another nation so that they may
+     compete for that nation. With our findings, athletes on the bubble of qualifying may
+     choose to represent a country with lower GDP per capita, as these nations generally
+     perform worse at the Olympics. Winter sport athletes on the bubble may also choose to
+     compete for nations that do not experience all four seasons as they have the highest
+     chance to qualify in these countries. As for advertisers, money is the main factor
+     involved. Based on our findings, Olympic teams from nations with higher GDPs will
+     likely have the highest price tag for their sponsorship rights as these teams draw
+     the most eyes with their success. In particular, the region “Europe & Central Asia”
+     will have the most expensive sponsorship rights as these nations historically have
+     the highest medal counts, GDP per capita, and performance for countries with lower
+     GDP per capita. At the winter olympics, the effect of GDP per capita on sponsor
+     price is even larger as this factor impacts medal count more than the summer
+     olympics. Finally, Olympic officials would be keen to learn our findings. Since we
+     learned Olympic success is heavily dependent on countrywide development, decision
+     makers must be clever in where they place their investment. In nations that do not
+     experience a “true winter,” officials may learn that it is a much better investment
+     to allocate money towards the summer games as success is more likely. Since medal
+     counts in lower GDP nations are generally low to begin with, Olympic committees in
+     these countries may centralize their investment in specific sports. This will ensure
+     resources are not spread thin and give them the best chance to compete with higher GDP
+     per capita nations. In Jamaica, we see this happening with track, which has led to
+     olympic prominence for the island nation. In terms of recruiting talent, these teams
+     may also look abroad to increase chances of success in future games."),
+   h1(strong("Conclusions:")),
+   p(style = "font-size:15px",
+     "In conclusion, we would like to emphasize the key takeaway that the results from
+     these findings are also applicable in other areas. GDP and wealth do not only impact
+     the Olympics, but also a wide variety of activities and events. It also serves the
+     purpose to show that despite the Olympics conducting a series of other preventative
+     measures to discourage athletes from having an advantage (such as drug testing, etc.)
+     there remains other confounding variables that leave some teams/athletes with an
+     advantage over others. This is crucial to show that success is made up of multiple
+     aspects and cannot be solely attributed to one thing or another, but rather a
+     combination of many factors. This project displays a correlation between the GDP of a
+     country and their Olympic success in a certain year to make this point evident, that
+     Olympic achievement involves multiple confounding variables. It is also important to
+     understand that the impact of GDP happens on a much higher level as it is out of the
+     athlete’s control how much money their respective country makes. However, this same
+     idea can be applied on a much lower level, as further analysis of each athlete’s
+     financial status may perhaps reveal somewhat similar patterns, those with more
+     money and more access to various resources are likely to have a higher success rate
+     than those with a lower income. Based on these factors presented, among many others,
+     it would be difficult and nearly impossible to design a competition where the playing
+     field is completely equal, and all athletes have a chance for success regardless of
+     financial status. Although this is not intended to take away from the hard work still
+     needed for success in the Olympics, it simply adds another factor to consider when
+     looking at the overall success of certain countries or individual athletes.
+     Nonetheless, Olympic success remains a difficult task to achieve with much skill
+     required, however, this analysis has shown that other factors not usually tested
+     for have been shown to have a correlation with winning in the Olympics."),
    sidebarLayout(
      position = "left",
      sidebarPanel(
