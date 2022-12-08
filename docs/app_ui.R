@@ -11,9 +11,6 @@ library(devtools)
 intro_panel <- tabPanel(
   "Introduction",
   titlePanel(strong("Olympic Success vs. GDP Analysis")),
-  p(style = "font-size:25px",
-  "Authors: Annabelle Haryanto (ayna27@uw.edu), Ethan Hsu (ehsu7@uw.edu), Kassy Chaput(kassyc2@uw.edu)"),
-  p(style = "font-size:22px", "Code Name: Tokyo 2021"),
   p(style = "font-size:20px",
     align = "center",
     "The Olympics are the ultimate measure of a nation's best athletes. Lifetimes of training and dedication are spent by 
@@ -156,17 +153,7 @@ map_panel <- tabPanel(
      label = "Choose a Country",
      choices = unique(medals_data$Team),
      selected = "United States"
-   ),
-   p("This interactive time frame shows the number of medals won by each country."),
-   p("As seen from the previous data visualization, the United States is among 
-     the top in both GDP production and Olympic success, this time graph goes further
-     in depth tracking the United States' Olympic success over time. This reveals that
-     the United States has had relatively stable success in the Olympics until 1980.
-     After 1980, the United States has had varied success, some years total medal count
-     is nearly 750, where as others it is closer to 250. This difference may be due to
-     the Olympics being held every 2 years and staggering Winter and Summer Olympics
-     after 1986. We can see that in the year 1992, the United States won the most medals
-     and after that, the graph fluctuates over the years until 2016.")
+   )
  )
  
  # Main Panel for Time Frame
@@ -182,6 +169,11 @@ map_panel <- tabPanel(
    sidebarLayout(
      time_frame_sidebar_content,
      time_frame_main_panel
+   ),
+   sidebarPanel(
+     p("This interactive time frame shows the number of medals won by each country."),
+     p("As seen from the previous two data visualizations, the United States is among the top in both GDP production and Olympic success, this time graph goes further in depth tracking the United States' Olympic success over time. This reveals that the United States has had relatively stable success in the Olympics until 1980. After 1980, the United States has had varied success, some years total medal count is nearly 750, where as others it is closer to 250. This difference may be due to the Olympics being held every 2 years and staggering Winter and Summer Olympics after 1986. We can see that in the year 1992, the United States won the most medals and after that, the graph fluctuates over the years until 2016."
+       )
    )
  )
 
@@ -273,7 +265,20 @@ summary_panel <- tabPanel(
   "Summary",
   titlePanel("Summary Takeaways"),
   p(style = "font-size:15px",
-    "The 3 main questions "),
+    "Our 3 initial questions before starting this assignment were “Does a positive correlation between a countries’ GDP and their overall medal count at the Olympics exist?”, “How has this relationship between GDP and Olympic medal count changed over time?” and “Our final question is to investigate if GDP appears to impact the Winter or Summer Olympics more?”. As we dive deeper into our research we found that there is a positive correlation between a countries’ GDP and their overall medal count at the Olympics does truly exist as countries with high GDP are more likely to win more medals. This is simply because they are able to provide their athletes with the best training, they are willing to invest deeply in them which means that the country truly cares and supports their respective athletes."
+    ),
+  br(),
+  p(style = "font-size:15px",
+    "Also countries with all 4 seasons may likely win most medals as they have the facility and the opportunity to conduct both summer and the winter Olympics. Throughout our research, we have also found that the level of income of each athlete impacts the success of their ability to gain the medals. Athletes with higher income are highly likely to win more medals than those with lower income as they might not be exposed to a better training system towards the Olympics."
+    ),
+  br(),
+  p(style = "font-size:15px",
+    "Although countries with higher GDP are more likely to win more medals, countries with lower GDP are also able to win medals but not as much. The Olympic is a very competitive sport for athletes and it will still remain tough to succeed whether it is in the Summer or Winter as they are both equally tough. Hard work and dedication is very important if they want to succeed in winning more medals."
+    ),
+  br(),
+  p(style = "font-size:15px",
+    "Money plays a big factor in the Olympics as spending on these Olympic athletes is relatively expensive. Countries with higher GDP are able to budget more of their spending on them as they are able to allocate their spending more on them. Take the U.S. in 1980, their medal count dropped significantly due to the economic recession. This evidently shows us how the GDP affects the Olympics. Lastly, we could say that it depends on the country. We feel that countries with all 4 seasons are able to benefit greatly from this because the resources for them to train are available and tropical countries are not exposed to the winter weather. To succeed in the Olympics is tough, with the right skill and determination, the country will then be able to compete and succeed."
+    ),
   scatter_panel
 )
 
@@ -290,18 +295,13 @@ report_panel <- tabPanel(
   ),
   titlePanel(strong("Olympic Medals Report")),
   p(style = "font-size:15px",
-    "This project displays a correlation between the GDP of a country and their Olympic
-    success in a certain year. It also serves the purpose to show that despite the
-    Olympics conducting a series of other preventative measures to discourage athletes
-    from having an advantage. There remains other confounding variables that leave some
-    teams/athletes with an advantage over others."
+    "This project displays a correlation between the GDP of a country and their Olympic success in a certain year. It also serves the purpose to show that despite the Olympics conducting a series of other preventative measures to discourage athletes from having an advantage. There remains other confounding variables that leave some teams/athletes with an advantage over others."
 ),
   sidebarLayout(
     position = "left",
     sidebarPanel(
     h4(strong("About Us")),
-    p("Special thanks to projects members for allocating resources and using R to create
-      this amazing project overviewing how the GDP impacts the Olympic games."),
+    p("Special thanks to projects members for allocating resources and using R to create this amazing project overviewing how the GDP impacts the Olympic games."),
     p("Annabelle Haryanto"),
     p("Ethan Hsu"),
     p("Kassy Chaput"),
@@ -315,7 +315,7 @@ report_panel <- tabPanel(
  # Tab panel for Summary
  summary_panel <- tabPanel(
    "Summary",
-   titlePanel("Summary Takeaways/Findings"),
+   titlePanel("Summary Takeaways"),
    p(style = "font-size:15px",
      "The 3 main questions")
  )
@@ -333,39 +333,32 @@ report_panel <- tabPanel(
    ),
    titlePanel(strong("Olympic Medals Report")),
    p(style = "font-size:15px",
-     "This project displays a correlation between the GDP of a country and their Olympic
-     success in a certain year. It also serves the purpose to show that despite the 
-     Olympics conducting a series of other preventative measures to discourage athletes
-     from having an advantage. There remains other confounding variables that leave some
-     teams/athletes with an advantage over others."
+     "This project displays a correlation between the GDP of a country and their Olympic success in a certain year. It also serves the purpose to show that despite the Olympics conducting a series of other preventative measures to discourage athletes from having an advantage. There remains other confounding variables that leave some teams/athletes with an advantage over others."
    ),
    sidebarLayout(
      position = "left",
      sidebarPanel(
        h4(strong("About Us")),
-       p("Special thanks to projects members for allocating resources and using R to create
-         this amazing project overviewing how the GDP impacts the Olympic games."),
+       p("Special thanks to projects members for allocating resources and using R to create this amazing project overviewing how the GDP impacts the Olympic games."),
        p("Annabelle Haryanto"),
        p("Ethan Hsu"),
        p("Kassy Chaput"),
+ 
      ),
+     mainPanel()
+   ),
    sidebarLayout(
      position = "right",
      sidebarPanel(
        h4(strong("Acknowledgements")),
-       p("We as a group are grateful to all of those with whom we have had the pleasure to
-       work during this website and research projects. We would like to say thank you to our
-       TA, Yubing Tian as she helped us resolve numerous coding problems as well as further
-         explaining to us what the prompt meant. We are grateful amongst ourselves as well
-         because we are able to get together to resolve each other's issues. And also that
-         there was good communication amongst ourselves so that we are not behind on any 
-         group project assignments."
+       p("We as a group are grateful to all of those with whom we have had the pleasure to work during this website and research projects. We would like to say thank you to our TA, Yubing Tian
+         as she helped us resolve numerous coding problems as well as further explaining to us what the prompt meant. We are grateful amongst ourselves as well because we are able to get together to resolve each other's issues. And also that there was good communication amongst ourselves so that we are not behind on any group project assignments."
          ),
      ),
     mainPanel()
-   ),
- )
+   )
 )
+
 
 # Navigation Bar
 ui <- navbarPage(
@@ -376,5 +369,5 @@ ui <- navbarPage(
   scatter_plot_panel,
   summary_panel,
   report_panel,
-  theme = shinytheme("darkly")
+  theme = shinytheme("superhero")
 )
