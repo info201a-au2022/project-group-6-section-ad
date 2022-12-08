@@ -11,6 +11,9 @@ library(devtools)
 intro_panel <- tabPanel(
   "Introduction",
   titlePanel(strong("Olympic Success vs. GDP Analysis")),
+  p(style = "font-size:25px",
+  "Authors: Annabelle Haryanto (ayna27@uw.edu), Ethan Hsu (ehsu7@uw.edu), Kassy Chaput(kassyc2@uw.edu)"),
+  p(style = "font-size:22px", "Code Name: Tokyo 2021"),
   p(style = "font-size:20px",
     align = "center",
     "The Olympics are the ultimate measure of a nation's best athletes. Lifetimes of training and dedication are spent by 
@@ -153,7 +156,17 @@ map_panel <- tabPanel(
      label = "Choose a Country",
      choices = unique(medals_data$Team),
      selected = "United States"
-   )
+   ),
+   p("This interactive time frame shows the number of medals won by each country."),
+   p("As seen from the previous data visualization, the United States is among 
+     the top in both GDP production and Olympic success, this time graph goes further
+     in depth tracking the United States' Olympic success over time. This reveals that
+     the United States has had relatively stable success in the Olympics until 1980.
+     After 1980, the United States has had varied success, some years total medal count
+     is nearly 750, where as others it is closer to 250. This difference may be due to
+     the Olympics being held every 2 years and staggering Winter and Summer Olympics
+     after 1986. We can see that in the year 1992, the United States won the most medals
+     and after that, the graph fluctuates over the years until 2016.")
  )
  
  # Main Panel for Time Frame
@@ -169,11 +182,6 @@ map_panel <- tabPanel(
    sidebarLayout(
      time_frame_sidebar_content,
      time_frame_main_panel
-   ),
-   sidebarPanel(
-     p("This interactive time frame shows the number of medals won by each country."),
-     p("As seen from the previous two data visualizations, the United States is among the top in both GDP production and Olympic success, this time graph goes further in depth tracking the United States' Olympic success over time. This reveals that the United States has had relatively stable success in the Olympics until 1980. After 1980, the United States has had varied success, some years total medal count is nearly 750, where as others it is closer to 250. This difference may be due to the Olympics being held every 2 years and staggering Winter and Summer Olympics after 1986. We can see that in the year 1992, the United States won the most medals and after that, the graph fluctuates over the years until 2016."
-       )
    )
  )
 
@@ -282,13 +290,18 @@ report_panel <- tabPanel(
   ),
   titlePanel(strong("Olympic Medals Report")),
   p(style = "font-size:15px",
-    "This project displays a correlation between the GDP of a country and their Olympic success in a certain year. It also serves the purpose to show that despite the Olympics conducting a series of other preventative measures to discourage athletes from having an advantage. There remains other confounding variables that leave some teams/athletes with an advantage over others."
+    "This project displays a correlation between the GDP of a country and their Olympic
+    success in a certain year. It also serves the purpose to show that despite the
+    Olympics conducting a series of other preventative measures to discourage athletes
+    from having an advantage. There remains other confounding variables that leave some
+    teams/athletes with an advantage over others."
 ),
   sidebarLayout(
     position = "left",
     sidebarPanel(
     h4(strong("About Us")),
-    p("Special thanks to projects members for allocating resources and using R to create this amazing project overviewing how the GDP impacts the Olympic games."),
+    p("Special thanks to projects members for allocating resources and using R to create
+      this amazing project overviewing how the GDP impacts the Olympic games."),
     p("Annabelle Haryanto"),
     p("Ethan Hsu"),
     p("Kassy Chaput"),
@@ -302,7 +315,7 @@ report_panel <- tabPanel(
  # Tab panel for Summary
  summary_panel <- tabPanel(
    "Summary",
-   titlePanel("Summary Takeaways"),
+   titlePanel("Summary Takeaways/Findings"),
    p(style = "font-size:15px",
      "The 3 main questions")
  )
@@ -320,32 +333,39 @@ report_panel <- tabPanel(
    ),
    titlePanel(strong("Olympic Medals Report")),
    p(style = "font-size:15px",
-     "This project displays a correlation between the GDP of a country and their Olympic success in a certain year. It also serves the purpose to show that despite the Olympics conducting a series of other preventative measures to discourage athletes from having an advantage. There remains other confounding variables that leave some teams/athletes with an advantage over others."
+     "This project displays a correlation between the GDP of a country and their Olympic
+     success in a certain year. It also serves the purpose to show that despite the 
+     Olympics conducting a series of other preventative measures to discourage athletes
+     from having an advantage. There remains other confounding variables that leave some
+     teams/athletes with an advantage over others."
    ),
    sidebarLayout(
      position = "left",
      sidebarPanel(
        h4(strong("About Us")),
-       p("Special thanks to projects members for allocating resources and using R to create this amazing project overviewing how the GDP impacts the Olympic games."),
+       p("Special thanks to projects members for allocating resources and using R to create
+         this amazing project overviewing how the GDP impacts the Olympic games."),
        p("Annabelle Haryanto"),
        p("Ethan Hsu"),
        p("Kassy Chaput"),
- 
      ),
-     mainPanel()
-   ),
    sidebarLayout(
      position = "right",
      sidebarPanel(
        h4(strong("Acknowledgements")),
-       p("We as a group are grateful to all of those with whom we have had the pleasure to work during this website and research projects. We would like to say thank you to our TA, Yubing Tian
-         as she helped us resolve numerous coding problems as well as further explaining to us what the prompt meant. We are grateful amongst ourselves as well because we are able to get together to resolve each other's issues. And also that there was good communication amongst ourselves so that we are not behind on any group project assignments."
+       p("We as a group are grateful to all of those with whom we have had the pleasure to
+       work during this website and research projects. We would like to say thank you to our
+       TA, Yubing Tian as she helped us resolve numerous coding problems as well as further
+         explaining to us what the prompt meant. We are grateful amongst ourselves as well
+         because we are able to get together to resolve each other's issues. And also that
+         there was good communication amongst ourselves so that we are not behind on any 
+         group project assignments."
          ),
      ),
     mainPanel()
-   )
+   ),
+ )
 )
-
 
 # Navigation Bar
 ui <- navbarPage(
