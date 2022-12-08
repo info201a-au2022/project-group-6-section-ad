@@ -11,9 +11,24 @@ library(devtools)
 intro_panel <- tabPanel(
   "Introduction",
   titlePanel(strong("Olympic Success vs. GDP Analysis")),
-  p(style = "font-size:25px",
-    "Authors: Annabelle Haryanto (ayna27@uw.edu), Ethan Hsu (ehsu7@uw.edu), Kassy Chaput(kassyc2@uw.edu)"),
-  p(style = "font-size:22px", "Code Name: Tokyo 2021"),
+  h3(style = "font-size:25px",
+    strong("Authors:")),
+  p(style = "font-size:15px",
+    "Annabelle Haryanto (ayna27@uw.edu), Ethan Hsu (ehsu7@uw.edu), Kassy Chaput(kassyc2@uw.edu)"),
+  h3(style = "font-size:25px", 
+    strong("Code Name:"), 
+  p(style = "font-size:15px",
+    "Tokyo 2021")),
+  h3(style = "font-size:25px",
+    strong("Affiliation:")),
+  p(style = "font-size:15px",
+    "INFO-201: Technical Foundations of Informatics - The Information School - University of Washington"
+    ),
+  h3(style = "font-size:25px",
+     strong("Date:")),
+  p(style = "font-size:15px",
+    "Autumn 2022"),
+  
   p(style = "font-size:20px",
     align = "center",
     "The Olympics are the ultimate measure of a nation's best athletes. Lifetimes of training and dedication are spent by 
