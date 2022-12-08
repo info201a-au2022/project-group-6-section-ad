@@ -16,7 +16,12 @@ intro_panel <- tabPanel(
   p(style = "font-size:15px",
     "Annabelle Haryanto (ayna27@uw.edu), Ethan Hsu (ehsu7@uw.edu), Kassy Chaput(kassyc2@uw.edu)"),
   h3(style = "font-size:25px", 
-    strong("Code Name:"), 
+    strong("Code Name:"),
+  h3(style = "font-size:25px",
+     strong("Keywords:")),
+  p(style = "font-size:15px",
+    "Olympic Performance, Gross Domestic Product, Medal Count, Historic Trends"
+    ),
   p(style = "font-size:15px",
     "Tokyo 2021")),
   h3(style = "font-size:25px",
