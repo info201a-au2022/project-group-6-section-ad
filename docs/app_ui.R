@@ -440,6 +440,27 @@ scatter_plot_panel <- tabPanel(
      Nonetheless, Olympic success remains a difficult task to achieve with much skill
      required, however, this analysis has shown that other factors not usually tested
      for have been shown to have a correlation with winning in the Olympics."),
+   h1(strong("References:")),
+   p(style = "font-size:15px",
+     "rgriffin and www.sports-reference.com, “120 years of Olympic history: athletes and results” (May 2018),
+https://www.kaggle.com/datasets/heesoo37/120-years-of-olympic-history-athletes-and-results?resource=download
+"),
+   p(style = "font-size:15px",
+     "Tokyo Olympics 2020 Website, “2021 Olympics in Tokyo” (2021),
+https://www.kaggle.com/datasets/arjunprasadsarkhel/2021-olympics-in-tokyo
+"),
+   p(style = "font-size:15px",
+     "World Bank, “GDP per capita, PPP (current international $)” (Updated annually),
+https://data.worldbank.org/indicator/NY.GDP.PCAP.PP.CD
+"),
+   p(style = "font-size:15px",
+     "Knight, B. (2020, February 20). Many Countries Pay Big Bonuses For Olympic Medals. This One Is Shelling Out $2.7 Million. Forbes.
+https://www.forbes.com/sites/brettknight/2022/02/20/many-countries-pay-big-bonuses-for-olympic-medals-this-one-is-shelling-out-27-million/?sh=89fe866283b6 "
+     ),
+   p(style = "font-size:15px",
+     "McBride and Manno. (2021, December 14). The Economic of Hosting the Olympic Games. Council on Foreign Relations.
+https://www.cfr.org/backgrounder/economics-hosting-olympic-games
+"),
    sidebarLayout(
      position = "left",
      sidebarPanel(
