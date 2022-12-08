@@ -41,8 +41,8 @@ The data points included in the table include the worldwide median GDP in the ye
 ```{r, echo = FALSE}
 # GDP Map
 
-source("../source/gdp map.R")
-ggplotly(gdp_map)
+source("../docs/gdp map.R")
+build_map("X2021")
 ```
 
 #### Observations:
@@ -63,8 +63,8 @@ This chart is to visualize the top 10 performing countries (in medal count) over
 ```{r, echo = FALSE}
 # United States Time Graph
 
-source("../source/medals time frame.R")
-ggplotly(medals_US)
+source("../docs/medals time frame.R")
+build_timeframe("United States")
 ```
 
 #### Observations:

@@ -8,7 +8,7 @@ library(maps)
 options(scipen = 999)
 
 # Load GDP dataset file
-country_gdp <- read.csv("https://raw.githubusercontent.com/info201a-au2022/project-group-6-section-ad/main/data/GDP_by_country.csv")
+country_gdp <- read_csv("https://raw.githubusercontent.com/info201a-au2022/project-group-6-section-ad/main/data/GDP_by_country.csv")
 
 build_map <- function(year_choice) {
 
