@@ -109,9 +109,9 @@ intro_panel <- tabPanel(
 year_choices <- list(
   "2021" = "X2021",
   "2016" = "X2016",
-  "2011" = "X2011",
-  "2006" = "X2006",
-  "2001" = "X2001"
+  "2012" = "X2012",
+  "2008" = "X2008",
+  "2004" = "X2004"
 )
 
 # Side Bar Panel for Map
@@ -130,7 +130,8 @@ map_sidebar_content <- sidebarPanel(
     lower GDP production such as many of the countries in both Africa and South America.
     The countries with high GDP (darker color) can also further be compared to the bar
     chart below to help determine if a correlation between high GDP and Olympic success
-    exists.")
+    exists. The countries colored gray do not have any available GDP data for the chosen
+    year.")
 )
 
 # Main Panel for Map
